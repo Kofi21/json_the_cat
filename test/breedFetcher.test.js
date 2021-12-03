@@ -16,10 +16,9 @@ describe("fetchBreedDescription", () => {
       done();
     });
   });
-  it("returns API Error when an invalid/non-existing breed is passed in", (done) => {
+  it("returns No breed detected when an invalid/non-existing breed is passed in", (done) => {
     fetchBreedDescription("Abowa", (error, desc) => {
-      desc = null;
-      assert.equal(error, null);
+      assert.equal(error, `No breed detected`);
 
       done();
     });
